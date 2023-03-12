@@ -5,3 +5,5 @@ infrastructure/terraform.tfstate
 infrastructure/terraform.tfstate.backup
 
 temp*
+
+app/src/__pycache__/*
