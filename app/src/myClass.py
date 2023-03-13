@@ -39,8 +39,12 @@ class JobSys(object):
         for item in response["Items"]:
             partition_keys.add(int(item["job_id"]["N"]))
 
-        job_id_max = max(partition_keys)
-        job_id = job_id_max + 1
+        print(len(partition_keys))
+        if len(partition_keys)==0:
+            job_id = 1
+        else:
+            job_id_max = max(partition_keys)
+            job_id = job_id_max + 1
         return job_id
 
     def put_item(self, data: dict) -> dict:
