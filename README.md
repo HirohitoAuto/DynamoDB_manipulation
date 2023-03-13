@@ -26,8 +26,6 @@ This bash file works like below:
 sh deploy.sh
 ```
 
-
-
 ## How it works?
 
 * `csv put` triggers Lambda
@@ -35,6 +33,12 @@ sh deploy.sh
 * Lambda read csv and defines `job_id` for processing task
 
 * Lambda insert the data into Dynamo DB table, with assigned `job_id`.
+
+
+
+**example of input csv**
+
+<img title="" src="pics/input_example.png" alt="" width="282">
 
 
 
