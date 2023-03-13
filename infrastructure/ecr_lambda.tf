@@ -31,6 +31,7 @@ resource "null_resource" "next" {
 resource "null_resource" "image_push" {
   provisioner "local-exec" {
     command = <<-EOF
+      aws ecr-public get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin public.ecr.aws
       aws ecr get-login-password --r+
       egion ap-northeast-1 | docker login --username AWS --password-stdin ${aws_ecr_repository.manipulate_dynamodb.repository_url}; \
       docker build -t ecr_manupula.0te_dynamodb . ; \
