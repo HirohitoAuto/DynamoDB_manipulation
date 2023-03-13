@@ -39,7 +39,7 @@ def read_definition(filename):
 """
 
 
-def handler(event, content):
+def lambda_handler(event, content):
     # set path
     parent_folder = Path(__file__).parents[0]
     filename_job_definition = Path(parent_folder, "job_definition.csv")
