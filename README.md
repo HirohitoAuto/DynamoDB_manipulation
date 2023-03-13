@@ -1,16 +1,10 @@
 # Manipulation Dynamo DB
 
-
-
 ## System Architecture
 
 ![](pics/architecture.png)
 
-
-
-
-
-## How to Use
+## How to Use?
 
 ### build infrastructure
 
@@ -31,3 +25,27 @@ This bash file works like below:
 ```bash
 sh deploy.sh
 ```
+
+
+
+## How it works?
+
+* `csv put` triggers Lambda
+
+* Lambda read csv and defines `job_id` for processing task
+
+* Lambda insert the data into Dynamo DB table, with assigned `job_id`.
+
+
+
+**Table Overview**
+
+![](pics/table_overview.png)
+
+
+
+**Record**
+
+(where job_id = 3)
+
+![](pics/record.png)
