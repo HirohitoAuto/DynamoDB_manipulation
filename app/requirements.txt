@@ -1,0 +1,4 @@
+pandas
+datetime
+pathlib
+boto3

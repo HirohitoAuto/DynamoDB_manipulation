@@ -34,12 +34,12 @@ def read_definition(filename):
 
 """
 ================================================
-=== Main
+=== Lambda Handler
 ================================================
 """
 
 
-def main():
+def lambda_handler(event, content):
     # set path
     parent_folder = Path(__file__).parents[0]
     filename_job_definition = Path(parent_folder, "job_definition.csv")
@@ -58,7 +58,3 @@ def main():
     response = this_job.put_item(data)
     print(f"\njob_id:{job_id}")
     print(response, "\n")
-
-
-if __name__ == "__main__":
-    main()
